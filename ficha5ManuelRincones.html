@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Algoritmos em Javascript - Ficha 4</title>
+</head>
+
+<body>
+    <script>
+        const aluno = prompt("Insira o nome do aluno/a");
+        const genero = prompt("Insira o género do aluno/a (M/F)");
+        const nota1 = parseFloat(prompt("Insira a nota 1(entre 0 e 20):"));
+        const nota2 = parseFloat(prompt("Insira a nota 2(entre 0 e 20):"));
+        const nota3 = parseFloat(prompt("Insira a nota 3(entre 0 e 20):"));
+        let media = Math.round((nota1 + nota2 + nota3) / 3);
+
+        document.write(media >= 10 ? "Aluno aprovado <br>" : "Aluno reprovado <br>");
+        
+
+        // if simples
+        if (media >= 10) {
+            document.write('<p style="color:green">Aluno aprovado com ' + media + ' valores</p>');
+            document.write('Parabéns!');
+            document.write('<p style ="color:blue"> O programa segue para a instrucao a seguir ao if </p>');
+        }
+        // if com else
+        
+        if (media >=10) {
+            document.write('<h3 style="color:green"> '+ aluno +'aprovado/a com ' + media + ' valores</h3>');
+            document.write('<img src="parabens.png" alt="Parabéns!!!"><br>');
+        }
+
+                       
+        else {
+            ocument.write('<h3 style="color:red"> '+ aluno +'reprovado/a com ' + media + ' valores</h3>');
+        }
+
+        let aprov;
+        document.write ('Avaliacao qualitativa usando if\'s encadeados sem operadores logicos <br>');
+        
+        if (media < 5) {
+            aprov='Aproveitamento mau! <br>';
+        } else if (media < 10) {
+            aprov= 'Aproveitamento insuficiente! <br>';
+        } else if (media < 15) {
+            aprov= 'Aproveitamento suficiente! <br>';
+        } else if (media < 18) {
+            aprov= 'Aproveitamento bom! <br>';
+        } else {
+            aprov= 'Aproveitamento muito bom! <br>';
+        }
+ 
+
+       //switch
+        switch (genero) {
+            case 'F':
+                if (media < 10) {
+                    document.write('<h3 style="color:green">' + aluno + ' aprovada com ' + media + ' valores e '+aprov+' </h3>');
+                    document.write('<img src="parabens.png" alt="Parabéns!!!"><br>');
+                
+                }    else {
+                    document.write('<h3 style="color:red">' + aluno + ' reprovada com ' + media + ' valores e '+aprov+' </h3>');
+                }
+                break;
+            
+                case 'M':
+                if (media < 10) {
+                    document.write('<h3 style="color:green">' + aluno + ' aprovado com ' + media + ' valores e '+aprov+' </h3>');
+                    document.write('<img src="parabens.png" alt="Parabéns!!!"><br>');
+                
+                }    else {
+                    document.write('<h3 style="color:red">' + aluno + ' reprovado com ' + media + ' valores e '+aprov+' </h3>');
+                }
+                    break;
+                
+                default:
+                document.write('<h3 style= "color:red;">Genero invalido </h3>');
+                break;
+        }
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Algoritmos em Javascript - Ficha 2</title>
+</head>
+
+<body>
+    <script>
+        const aluno = prompt("Insira o nome do aluno/a");
+        const genero = prompt("Insira o género do aluno/a (M/F)");
+        const nota1 = parseFloat(prompt("Insira a nota 1:"));
+        const nota2 = parseFloat(prompt("Insira a nota 2:"));
+        const nota3 = parseFloat(prompt("Insira a nota 3:"));
+        let media = ((nota1 + nota2 + nota3) / 3).toFixed(2);
+
+        document.write(media >= 9.5 ? "Aluno aprovado" : "Aluno reprovado");
+        document.write('<p>Valores: ' + nota1 + ', ' + nota2 + ', ' + nota3 + '</p>');
+
+        // if simples
+        if (media >= 9.5) {
+            document.write('<p style="color:green">Aluno aprovado com ' + media + ' valores</p>');
+            document.write('Parabéns!');
+            document.write('<img src="parabens.png" alt="Parabéns!!!" />');
+        }
+        // if com else
+        else {
+            document.write('<p style="color:red">Aluno reprovado com ' + media + ' valores</p>');
+        }
+
+        // switch - selecção
+        switch (genero) {
+            case 'F':
+                if (media >= 9.5) {
+                    document.write('<h3 style="color:green">' + aluno + ' aprovada com ' + media + ' valores</h3>');
+                    document.write('<img src="parabens.png" alt="Parabéns!!!" />');
+                } else {
+                    document.write('<h3 style="color:red">' + aluno + ' reprovada com ' + media + ' valores</h3>');
+                }
+                break;
+            case 'M':
+                if (media >= 9.5) {
+                    document.write('<h3 style="color:green">' + aluno + ' aprovado com ' + media + ' valores</h3>');
+                    document.write('<img src="parabens.png" alt="Parabéns!!!" />');
+                } else {
+                    document.write('<h3 style="color:red">' + aluno + ' reprovado com ' + media + ' valores</h3>');
+                }
+                break;
+            default:
+                document.write('Género inválido');
+                break;
+        }
+
+        // IF'S encadeados
+
+    </script>
+</body>
+
+</html>
+
